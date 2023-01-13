@@ -17,11 +17,39 @@ const result = document.querySelector(".result");
 const header = document.querySelector(".header");
 const originalHeadar = header.innerHTML;
 const feildTime = document.querySelector(".feildTime");
+const col = document.querySelector("#color");
 let flag = 0;
 let res;
+const arr = ["a", "b", "c", "d", "e", "f", "g", "h"];
+
+function changeDir(col) {
+  const r = document.querySelector(":root");
+
+  if (col == "black") {
+    for (let i = 0; i < 8; i++) {
+      r.style.setProperty(`--left${i + 1}`, `"${8 - i}"`);
+      console.log(arr[arr.length - (i + 1)]);
+      r.style.setProperty(
+        `--${arr[i]}`,
+        `"${arr[arr.length - (i + 1)].toLocaleUpperCase()}"`
+      );
+    }
+  } else {
+    for (let i = 0; i < 8; i++) {
+      r.style.setProperty(`--left${i + 1}`, `"${1 + i}"`);
+      console.log(arr[arr.length - (i + 1)]);
+      r.style.setProperty(`--${arr[i]}`, `"${arr[i].toLocaleUpperCase()}"`);
+    }
+  }
+}
+
+function blind() {
+  const arr = ["white", "black"];
+  const num = Math.floor(Math.random() * 2);
+  changeDir(arr[num]);
+}
 
 function changeOrder() {
-  const arr = ["a", "b", "c", "d", "e", "f", "g", "g"];
   let genNum = Math.ceil(Math.random() * 8);
   let elNum = Math.floor(Math.random() * 8);
 
@@ -71,6 +99,9 @@ function finishOrder() {
 btn.addEventListener("click", () => {
   if (Number(feildTime.value) > 0) {
     changeHeader();
+    result.innerHTML = "";
+    if (col.value == "black") changeDir(col.value);
+    if (col.value == "blind") blind();
 
     let count = 0;
     let sco = 0;
@@ -125,7 +156,10 @@ btn.addEventListener("click", () => {
           el.onclick = (event) => {
             const parent = document.createElement("div");
             console.log(res);
-            if (res == event.target.id.split("-")[1]) {
+            if (
+              res == event.target.id.split("-")[1] ||
+              res == event.target.id.split("-")[3]
+            ) {
               right.currentTime = 0;
               wrong.currentTime = 0;
               right.pause();
@@ -135,6 +169,16 @@ btn.addEventListener("click", () => {
               sco++;
               score.textContent = sco;
               right.play();
+              event.target.innerHTML = `<i class="fa-solid fa-circle-check"></i>`;
+              event.target.style.color = "#537133";
+              let elR = 0;
+              const tt = setInterval(() => {
+                if (elR == 1) {
+                  clearInterval(tt);
+                  event.target.innerHTML = "";
+                }
+                elR++;
+              }, 300);
             } else {
               right.currentTime = 0;
               wrong.currentTime = 0;
@@ -143,9 +187,19 @@ btn.addEventListener("click", () => {
               parent.classList.add("wrong");
               parent.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>${res}`;
               wrong.play();
+              event.target.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>`;
+              event.target.style.color = "rgb(209, 66, 66)";
+              let elR = 0;
+              const tt = setInterval(() => {
+                if (elR == 1) {
+                  clearInterval(tt);
+                  event.target.innerHTML = "";
+                }
+                elR++;
+              }, 300);
             }
             result.appendChild(parent);
-
+            if (col.value == "blind") blind();
             res = changeOrder();
           };
         });

@@ -6,6 +6,25 @@
   box-sizing: border-box;
 }
 
+:root {
+  --left1: "1";
+  --left2: "2";
+  --left3: "3";
+  --left4: "4";
+  --left5: "5";
+  --left6: "6";
+  --left7: "7";
+  --left8: "8";
+  --a: "A";
+  --b: "B";
+  --c: "C";
+  --d: "D";
+  --e: "E";
+  --f: "F";
+  --g: "G";
+  --h: "H";
+}
+
 i {
   font-size: 20px;
 }
@@ -253,7 +272,7 @@ input::-webkit-inner-spin-button {
   display: none !important;
 }
 
-/* ///////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
 #w-a1-b-h8::before,
 #w-a2-b-h7::before,
 #w-a3-b-h6::before,
@@ -262,7 +281,7 @@ input::-webkit-inner-spin-button {
 #w-a6-b-h3::before,
 #w-a7-b-h2::before,
 #w-a8-b-h1::before {
-  content: "1";
+  content: var(--left1);
   position: absolute;
   font-size: 18px;
   font-weight: 700;
@@ -273,25 +292,25 @@ input::-webkit-inner-spin-button {
   font-family: Arial, Helvetica, sans-serif;
 }
 #w-a2-b-h7::before {
-  content: "2";
+  content: var(--left2);
 }
 #w-a3-b-h6::before {
-  content: "3";
+  content: var(--left3);
 }
 #w-a4-b-h5::before {
-  content: "4";
+  content: var(--left4);
 }
 #w-a5-b-h4::before {
-  content: "5";
+  content: var(--left5);
 }
 #w-a6-b-h3::before {
-  content: "6";
+  content: var(--left6);
 }
 #w-a7-b-h2::before {
-  content: "7";
+  content: var(--left7);
 }
 #w-a8-b-h1::before {
-  content: "8";
+  content: var(--left8);
 }
 
 /* ///////////////////////////////////////// */
@@ -303,7 +322,7 @@ input::-webkit-inner-spin-button {
 #w-f1-b-c8::after,
 #w-g1-b-b8::after,
 #w-h1-b-a8::after {
-  content: "A";
+  content: var(--a);
   position: absolute;
   font-size: 16px;
   font-weight: 700;
@@ -314,25 +333,25 @@ input::-webkit-inner-spin-button {
   font-family: Arial, Helvetica, sans-serif;
 }
 #w-b1-b-g8::after {
-  content: "B";
+  content: var(--b);
 }
 #w-c1-b-f8:after {
-  content: "C";
+  content: var(--c);
 }
 #w-d1-b-e8::after {
-  content: "D";
+  content: var(--d);
 }
 #w-e1-b-d8::after {
-  content: "E";
+  content: var(--e);
 }
 #w-f1-b-c8::after {
-  content: "F";
+  content: var(--f);
 }
 #w-g1-b-b8::after {
-  content: "G";
+  content: var(--g);
 }
 #w-h1-b-a8::after {
-  content: "H";
+  content: var(--h);
 }
 
 .view {
