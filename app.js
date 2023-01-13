@@ -100,6 +100,7 @@ btn.addEventListener("click", () => {
   if (Number(feildTime.value) > 0) {
     changeHeader();
     result.innerHTML = "";
+    score.textContent = "0";
     if (col.value == "black") changeDir(col.value);
     if (col.value == "blind") blind();
 
@@ -164,6 +165,7 @@ btn.addEventListener("click", () => {
               wrong.currentTime = 0;
               right.pause();
               wrong.pause();
+
               parent.classList.add("corect");
               parent.innerHTML = `<i class="fa-solid fa-circle-check"></i>${res}`;
               sco++;
@@ -184,6 +186,7 @@ btn.addEventListener("click", () => {
               wrong.currentTime = 0;
               right.pause();
               wrong.pause();
+
               parent.classList.add("wrong");
               parent.innerHTML = `<i class="fa-solid fa-circle-xmark"></i>${res}`;
               wrong.play();
