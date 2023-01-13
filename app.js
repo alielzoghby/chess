@@ -101,7 +101,7 @@ btn.addEventListener("click", () => {
     changeHeader();
     result.innerHTML = "";
     score.textContent = "0";
-    if (col.value == "black") changeDir(col.value);
+    changeDir(col.value);
     if (col.value == "blind") blind();
 
     let count = 0;
