@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>CHESS</title>
+  </head>
+  <body>
+    <div class="game">
+      <ul>
+        <div class="divv" id="row8">
+          <li class="box" id="w-a8-b-h1"></li>
+          <li class="box" id="w-b8-b-g1"></li>
+          <li class="box" id="w-c8-b-f1"></li>
+          <li class="box" id="w-d8-b-e1"></li>
+          <li class="box" id="w-e8-b-d1"></li>
+          <li class="box" id="w-f8-b-c1"></li>
+          <li class="box" id="w-g8-b-b1"></li>
+          <li class="box" id="w-h8-b-a1"></li>
+        </div>
+        <div class="divv" id="row7">
+          <li class="box" id="w-a7-b-h2"></li>
+          <li class="box" id="w-b7-b-g2"></li>
+          <li class="box" id="w-c7-b-f2"></li>
+          <li class="box" id="w-d7-b-e2"></li>
+          <li class="box" id="w-e7-b-d2"></li>
+          <li class="box" id="w-f7-b-c2"></li>
+          <li class="box" id="w-g7-b-b2"></li>
+          <li class="box" id="w-h7-b-a2"></li>
+        </div>
+        <div class="divv" id="row6">
+          <li class="box" id="w-a6-b-h3"></li>
+          <li class="box" id="w-b6-b-g3"></li>
+          <li class="box" id="w-c6-b-f3"></li>
+          <li class="box" id="w-d6-b-e3"></li>
+          <li class="box" id="w-e6-b-d3"></li>
+          <li class="box" id="w-f6-b-c3"></li>
+          <li class="box" id="w-g6-b-b3"></li>
+          <li class="box" id="w-h6-b-a3"></li>
+        </div>
+        <div class="divv" id="row5">
+          <li class="box" id="w-a5-b-h4"></li>
+          <li class="box" id="w-b5-b-g4"></li>
+          <li class="box" id="w-c5-b-f4"></li>
+          <li class="box" id="w-d5-b-e4"></li>
+          <li class="box" id="w-e5-b-d4"></li>
+          <li class="box" id="w-f5-b-c4"></li>
+          <li class="box" id="w-g5-b-b4"></li>
+          <li class="box" id="w-h5-b-a4"></li>
+        </div>
+        <div class="divv" id="row4">
+          <li class="box" id="w-a4-b-h5"></li>
+          <li class="box" id="w-b4-b-g5"></li>
+          <li class="box" id="w-c4-b-f5"></li>
+          <li class="box" id="w-d4-b-e5"></li>
+          <li class="box" id="w-e4-b-d5"></li>
+          <li class="box" id="w-f4-b-c5"></li>
+          <li class="box" id="w-g4-b-b5"></li>
+          <li class="box" id="w-h4-b-a5"></li>
+        </div>
+        <div class="divv" id="row3">
+          <li class="box" id="w-a3-b-h6"></li>
+          <li class="box" id="w-b3-b-g6"></li>
+          <li class="box" id="w-c3-b-f6"></li>
+          <li class="box" id="w-d3-b-e6"></li>
+          <li class="box" id="w-e3-b-d6"></li>
+          <li class="box" id="w-f3-b-c6"></li>
+          <li class="box" id="w-g3-b-b6"></li>
+          <li class="box" id="w-h3-b-a6"></li>
+        </div>
+        <div class="divv" id="row2">
+          <li class="box" id="w-a2-b-h7"></li>
+          <li class="box" id="w-b2-b-g7"></li>
+          <li class="box" id="w-c2-b-f7"></li>
+          <li class="box" id="w-d2-b-e7"></li>
+          <li class="box" id="w-e2-b-d7"></li>
+          <li class="box" id="w-f2-b-c7"></li>
+          <li class="box" id="w-g2-b-b7"></li>
+          <li class="box" id="w-h2-b-a7"></li>
+        </div>
+        <div class="divv" id="row1">
+          <li class="box" id="w-a1-b-h8"></li>
+          <li class="box" id="w-b1-b-g8"></li>
+          <li class="box" id="w-c1-b-f8"></li>
+          <li class="box" id="w-d1-b-e8"></li>
+          <li class="box" id="w-e1-b-d8"></li>
+          <li class="box" id="w-f1-b-c8"></li>
+          <li class="box" id="w-g1-b-b8"></li>
+          <li class="box" id="w-h1-b-a8"></li>
+        </div>
+      </ul>
+      <div class="view display-none"></div>
+    </div>
+    <div class="control">
+      <div class="header"><i class="fa-duotone fa-bullseye"></i>Vision</div>
+      <div class="img flex">
+        <div class="top">
+          <div class="sc">
+            <img src="img/chess-pieces.png" alt="" />
+            <div class="score display-none">0</div>
+          </div>
+          <div class="time display-none">0.00</div>
+        </div>
+        <div class="result display-none"></div>
+      </div>
+
+      <div class="form">
+        <div class="chose">
+          <div class="se">
+            <label for="tr-mo">Training Mode</label
+            ><select name="tr-mo" id="tr-mo">
+              <option value="Coordinates">Coordinates</option>
+            </select>
+          </div>
+          <div class="se">
+            <label for="color">Color</label
+            ><select name="color" id="color">
+              <option value="white">White</option>
+              <!-- <option value="white">Black</option> -->
+            </select>
+          </div>
+        </div>
+        <div class="timer">
+          <label for="timer">Set Timer</label>
+          <input class="feildTime" type="number" />
+          <label for="timer">Second</label>
+        </div>
+        <button class="btn" id="sda">START</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
