@@ -148,9 +148,9 @@ btn.addEventListener("click", () => {
         snd.pause();
         feild.textContent = "GO!";
         sndStart.play();
-        setTimeout()
-        
-        setTimeout(()=> {res = changeOrder()};, 800)
+        setTimeout(() => {
+          res = changeOrder();
+        }, 800);
       }
       if (count > 3) {
         feildTime.value--;
@@ -220,6 +220,8 @@ btn.addEventListener("click", () => {
         sndEnd.play();
         feildTime.value = 0;
         timeGame.style.color = "#8f8f8d";
+        feild.innerHTML = "";
+        feild.classList.remove("view-black");
       }
     }, 1000);
   } else {
