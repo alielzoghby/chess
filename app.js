@@ -148,7 +148,9 @@ btn.addEventListener("click", () => {
         snd.pause();
         feild.textContent = "GO!";
         sndStart.play();
-        res = changeOrder();
+        setTimeout()
+        
+        setTimeout(()=> {res = changeOrder()};, 800)
       }
       if (count > 3) {
         feildTime.value--;
