@@ -218,7 +218,7 @@ btn.addEventListener("click", () => {
           el.onclick = () => {};
         });
         sndEnd.play();
-        feildTime.value = 0;
+        feildTime.value = 30;
         timeGame.style.color = "#8f8f8d";
         feild.innerHTML = "";
         feild.classList.remove("view-black");
